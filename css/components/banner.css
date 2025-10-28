@@ -1,0 +1,50 @@
+:root {
+  /* رنگ‌ها */
+  --primary-color: #cc312d;
+  --text-color: #1a1814;
+  --bg-color: antiquewhite;
+
+  /* فونت */
+  --font-weight: 800;
+  --font-size-mobile: 2rem;
+  --font-size-desktop: 2rem; /* می‌توانید در صورت نیاز تغییر دهید */
+
+  /* ابعاد بنر (موبایل/پیش‌فرض) */
+  --banner-width: 31.3rem;
+  --banner-height: 7.2rem;
+  --banner-line-height: 1; /* معادل 100% */
+
+  /* ابعاد بنر (دسکتاپ ≥1024px) */
+  --banner-width-desktop: 27.6rem;
+  --banner-height-desktop: 7.8rem;
+  --banner-line-height-desktop: 3.9rem;
+}
+
+.banner {
+  width: var(--banner-width);
+  height: var(--banner-height);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-mobile);
+  line-height: var(--banner-line-height);
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* توصیه می‌شود برای جلوگیری از overflow */
+}
+
+.banner .red {
+  color: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    width: var(--banner-width-desktop);
+    height: var(--banner-height-desktop);
+    font-size: var(--font-size-desktop);
+    line-height: var(--banner-line-height-desktop);
+  }
+}
