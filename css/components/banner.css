@@ -40,6 +40,9 @@
   color: var(--primary-color);
 }
 
+
+
+
 @media screen and (min-width: 1024px) {
   .banner {
     width: var(--banner-width-desktop);

@@ -1,38 +1,99 @@
+/* Colors */
 :root {
-  /* رنگ‌ها */
   --primary-color: #cc312d;
-  --text-color: #1a1814;
   --secondary-text-color: #606060;
-  --bg-color: #ffffff;
+  --text-color: #1a1814;
+  --white-color: #ffffff;
 }
 
-.card-container {
-  width: 31.7rem;
-  height: 32.8rem;
-  border-radius: 2.4rem;
-  background-color: var(--bg-color);
+/* Article */
+:root {
+  --article-width: 31.7rem;
+  --article-height: 32.8rem;
+  --border-radius-md: 2.4rem;
+  --gap: 1.2rem;
+}
+
+article {
+  width: var(--article-width);
+  height: var(--article-height);
+  border-radius: var(--border-radius-md);
+  background-color: var(--white-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: var(--gap);
 }
 
-.card-image {
-  width: 29.3rem;
-  height: 19.6rem;
+/* Image */
+:root {
+  --border-radius-sm: 1.6rem;
+  --aspect-ratio: 3/2;
+  --image-width: 29.3rem;
+  --image-height: 19.6rem;
 }
 
-.card-image img {
+.card__image {
+  width: var(--image-width);
+  height: var(--image-height);
+  position: relative;
+}
+
+.card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  aspect-ratio: 3/2;
-  border-radius: 1.6rem;
+  aspect-ratio: var(--aspect-ratio);
+  border-radius: var(--border-radius-sm);
 }
 
-.card-description {
+/* Badge */
+:root {
+  --card-badge-width: 9.1rem;
+  --card-badge-height: 3.2rem;
+  --position-top: 1.2rem;
+  --position-right: 1.2rem;
+}
+
+.card__badge {
+  width: var(--card-badge-width);
+  height: var(--card-badge-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  top: var(--position-top);
+  right: var(--position-right);
+}
+
+.badge__icon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.badge__content {
+  width: 7.7rem;
+  height: 3.2rem;
+  border-radius: 3rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__badge p {
+  color: var(--bg-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 100%;
+}
+
+.card__description {
   width: 29.3rem;
   height: 10rem;
   display: flex;
@@ -40,32 +101,28 @@
   justify-content: start;
   align-items: start;
   gap: 1.2rem;
-  background-color: #cc31 2d;
 }
 
-.card-header {
+.card__header {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
+  gap: 0.4rem;
 }
 
-.card-header-h1 {
-  width: 29.3rem;
-  height: 2.5rem;
+.card__header--h1 {
   font-weight: 600;
   font-size: 1.4rem;
 }
 
-.card-header-h3 {
-  width: 29.3rem;
-  height: 1.9rem;
+.card__header--h3 {
   font-weight: 400;
   font-size: 1.2rem;
   color: var(--secondary-text-color);
 }
 
-.card-footer {
+.card__footer {
   width: 29.3rem;
   height: 4rem;
   border-radius: 1.2rem;
@@ -75,14 +132,14 @@
   flex-direction: row;
 }
 
-.card-date {
+.card__date {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 180%;
   color: var(--secondary-text-color);
 }
 
-.card-link {
+.card__link {
   width: 11.1rem;
   height: 4rem;
   display: flex;
@@ -90,24 +147,17 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.4rem;
-}
-
-.card-link {
   text-decoration: none;
 }
-.card-continue {
-  width: 7.9rem;
-  height: 2.4rem;
-}
 
-.card-continue > p {
+.card__continue {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.4rem;
   color: var(--primary-color);
 }
 
-.card-icon-container {
+.icon__container {
   width: 2.4rem;
   height: 2.4rem;
   display: flex;
@@ -115,21 +165,56 @@
   align-items: center;
 }
 
-.card-icon {
+.icon__container > .icon {
   width: 1.7rem;
   height: 1.3rem;
 }
 
-/* تبلت (601px تا 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-}
-
 /* دسکتاپ (بالای 1025px) */
 @media (min-width: 1025px) {
-  body {
-    font-size: 18px;
+  article {
+    width: 30rem;
+    height: 40.7rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card__image {
+    width: 27rem;
+    height: 24rem;
+  }
+
+  .card__image img {
+    aspect-ratio: 3/4;
+  }
+
+  .card__description {
+    width: 27rem;
+    height: 12.7rem;
+    gap: 2.4rem;
+  }
+
+  .card__header--h1 {
+    width: 27rem;
+    height: 3.5rem;
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+  }
+
+  .card__header--h3 {
+    width: 27rem;
+    height: 2.4rem;
+  }
+
+  .card__footer {
+    width: 27rem;
+  }
+
+  .card__link {
+    gap: 0.8rem;
   }
 }
