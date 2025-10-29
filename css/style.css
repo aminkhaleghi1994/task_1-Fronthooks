@@ -1,3 +1,7 @@
+:root {
+  --background-color: #fff4f8;
+}
+
 ::before,
 ::after,
 * {
@@ -12,5 +16,9 @@ html {
 
 body {
   font-family: "Vazirmatn", "Courier New", Courier, monospace;
-  background-color: bisque;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

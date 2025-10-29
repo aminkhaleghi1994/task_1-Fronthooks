@@ -2,7 +2,6 @@
 :root {
   --primary-color: #cc312d;
   --text-color: #1a1814;
-  --banner-bg-color: antiquewhite;
 }
 
 /* ========== متغیرهای فونت ========== */
@@ -30,7 +29,6 @@
 .banner {
   width: var(--banner-width);
   height: var(--banner-height);
-  background-color: var(--banner-bg-color);
   color: var(--text-color);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
