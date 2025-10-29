@@ -1,53 +1,62 @@
+/* ========== متغیرهای رنگ ========== */
 :root {
-  /* رنگ‌ها */
   --primary-color: #cc312d;
   --text-color: #1a1814;
-  --bg-color: antiquewhite;
+  --banner-bg-color: antiquewhite;
+}
 
-  /* فونت */
-  --font-weight: 800;
-  --font-size-mobile: 2rem;
-  --font-size-desktop: 2rem; /* می‌توانید در صورت نیاز تغییر دهید */
+/* ========== متغیرهای فونت ========== */
+:root {
+  --font-weight-bold: 800;
+  --font-size-xl: 2rem;
+  --line-height-100: 100%;
+}
 
-  /* ابعاد بنر (موبایل/پیش‌فرض) */
+/* ========== متغیرهای بنر (موبایل) ========== */
+:root {
   --banner-width: 31.3rem;
   --banner-height: 7.2rem;
-  --banner-line-height: 1; /* معادل 100% */
+  --banner-padding: 1rem;
+}
 
-  /* ابعاد بنر (دسکتاپ ≥1024px) */
+/* ========== متغیرهای بنر (دسکتاپ) ========== */
+:root {
   --banner-width-desktop: 27.6rem;
   --banner-height-desktop: 7.8rem;
   --banner-line-height-desktop: 3.9rem;
 }
 
+/* ========== استایل بنر ========== */
 .banner {
   width: var(--banner-width);
   height: var(--banner-height);
-  background-color: var(--bg-color);
+  background-color: var(--banner-bg-color);
   color: var(--text-color);
-  font-weight: var(--font-weight);
-  font-size: var(--font-size-mobile);
-  line-height: var(--banner-line-height);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-100);
   letter-spacing: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box; /* توصیه می‌شود برای جلوگیری از overflow */
+  box-sizing: border-box;
+}
+
+.banner p {
+  margin: 0;
+  padding: 0;
 }
 
 .banner .red {
   color: var(--primary-color);
 }
 
-
-
-
+/* ========== Desktop (بالای 1024px) ========== */
 @media screen and (min-width: 1024px) {
   .banner {
     width: var(--banner-width-desktop);
     height: var(--banner-height-desktop);
-    font-size: var(--font-size-desktop);
     line-height: var(--banner-line-height-desktop);
   }
 }

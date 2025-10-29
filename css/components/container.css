@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center; /* وسط‌چین افقی */
+  min-height: 100vh;
+  background-color: red; /* پس‌زمینه پیش‌فرض */
+}
+
+.flex__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* وسط‌چین کردن محتوای داخلی */
+  gap: 2rem;
+  background-color: aqua;
+  width: 100%; /* یا max-width منطقی */
+  max-width: 36.6rem;
+  padding: 1rem; /* فضای داخلی */
+  box-sizing: border-box;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: 1fr; /* موبایل: 1 ستون */
+  gap: 1.5rem;
+  background-color: blueviolet;
+  width: 100%; /* پر کردن عرض کانتینر والد */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* تبلت */
+@media (min-width: 600px) {
+  .grid__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* دسکتاپ */
+@media (min-width: 1025px) {
+  .grid__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
